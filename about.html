@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Prisha Srivastava</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --cream-mid: #F2EBE1;
+      --cream-border: #E0D0C4;
+      --maroon: #6b1a1a;
+      --maroon-light: #f5e8e8;
+      --text-dark: #1a1a1a;
+      --text-mid: #555;
+      --text-muted: #999;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      border-bottom: 1px solid var(--cream-border);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--maroon);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 32px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--maroon); }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--maroon);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .divider { height: 1px; background: var(--cream-border); margin: 0 48px; }
+
+    /* HERO */
+    .hero {
+      padding: 96px 48px 80px;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .photo-placeholder {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-border);
+      border-radius: 8px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .photo-placeholder p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* LENSES */
+    .lenses {
+      padding: 48px 48px;
+      background: var(--cream-mid);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--maroon);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .lens-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .lens-card {
+      background: var(--cream);
+      border: 1px solid var(--cream-border);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .lens-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--maroon);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .lens-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .lens-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* EDUCATION */
+    .education {
+      padding: 48px 48px;
+      background: var(--cream);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .edu-card {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-border);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .edu-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .edu-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* INTERESTS */
+    .interests {
+      padding: 48px 48px;
+      background: var(--cream-mid);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: var(--maroon);
+      background: var(--maroon-light);
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    footer {
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--cream-border);
+      background: var(--cream);
+    }
+
+    .footer-text { font-size: 12px; color: var(--text-muted); }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--maroon);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Prisha Srivastava</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">About Me</p>
+      <h1>People > Products > Impact.</h1>
+      <p>Hi! My name is Prisha. I'm currently pursuing my Master's in AI at Northeastern, and graduated with honors with a B.S. in Business Economics and a minor in Cognitive Science from Hofstra.</p>
+      <p>My path to product management was not linear, but I like to think that is what sets me apart. I started by studying how people think and make decisions, then layered in how markets work, what drives consumer behavior, and how to weigh trade-offs. I'm focused on human-centered technology, building products that are thoughtful, responsible, and designed with real people in mind.</p>
+    </div>
+    <div class="photo-placeholder">
+      <img src="images/aboutmepic.png" alt="Prisha Srivastava" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" />
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="lenses">
+    <p class="section-label">Three Lenses I Bring To Product</p>
+    <div class="lens-grid">
+      <div class="lens-card">
+        <p class="lens-label">Cognitive Science</p>
+        <h3>Understanding How People Think</h3>
+        <p>Why do users make the choices they do? What mental models are they working with? I think about behavior before I think about features.</p>
+      </div>
+      <div class="lens-card">
+        <p class="lens-label">Business Economics</p>
+        <h3>Incentives, Trade-offs, Consumer Behavior</h3>
+        <p>Every product decision has a cost. I am trained to identify what drives behavior at scale and where the real trade-offs lie.</p>
+      </div>
+      <div class="lens-card">
+        <p class="lens-label">Artificial Intelligence</p>
+        <h3>A Tool, Not A Box</h3>
+        <p>I have built AI systems and studied how they land in the real world. I care about what they can do for users, who they affect, and whether they are being built responsibly.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="education">
+    <p class="section-label">Education</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3>M.S. Artificial Intelligence</h3>
+        <p>Northeastern University<br>In Progress. Focus on machine learning and computer vision.</p>
+      </div>
+      <div class="edu-card">
+        <h3>B.S. Business Economics, Honors</h3>
+        <p>Hofstra University<br>Minor In Cognitive Science</p>
+      </div>
+      <div class="edu-card">
+        <h3>Data Structures &amp; Algorithms</h3>
+        <p>UC Berkeley Extension<br>Grade: A</p>
+      </div>
+      <div class="edu-card">
+        <h3>Honors Thesis</h3>
+        <p>Outsourcing Intelligence: estimated the impact of AI investment on employment across 52 tech companies. Available upon request.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="interests">
+    <p class="section-label">Outside Of Work</p>
+    <div class="tags">
+      <span class="tag">Tech &amp; Startups</span>
+      <span class="tag">NU Launch Labs</span>
+      <span class="tag">Vintage Cars</span>
+      <span class="tag">Coffee (Chats)</span>
+      <span class="tag">Yoga</span>
+      <span class="tag">Running</span>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-text">Prisha Srivastava &copy; 2026</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prisriva/" target="_blank">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>

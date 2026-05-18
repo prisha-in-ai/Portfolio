@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience | Prisha Srivastava</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --cream-mid: #F2EBE1;
+      --cream-border: #E0D0C4;
+      --maroon: #6b1a1a;
+      --maroon-light: #f5e8e8;
+      --text-dark: #1a1a1a;
+      --text-mid: #555;
+      --text-muted: #999;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      border-bottom: 1px solid var(--cream-border);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--maroon);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 32px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover { color: var(--maroon); }
+
+    .page-header {
+      padding: 72px 48px 48px;
+      background: var(--cream);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--maroon);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+
+    .divider { height: 1px; background: var(--cream-border); margin: 0 48px; }
+
+    .exp-section {
+      padding: 48px 48px;
+      background: var(--cream-mid);
+    }
+
+    .role-card {
+      background: var(--cream);
+      border: 1px solid var(--cream-border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .role-card:last-child { margin-bottom: 0; }
+
+    .role-top {
+      padding: 22px 24px 18px;
+      cursor: pointer;
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .company {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--text-dark);
+    }
+
+    .date {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .role-title {
+      font-size: 13px;
+      color: var(--maroon);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .role-loc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .role-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .role-tag {
+      font-size: 11px;
+      color: var(--maroon);
+      background: var(--maroon-light);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--maroon);
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0;
+    }
+
+    .role-expand {
+      background: var(--cream-mid);
+      border-top: 1px solid var(--cream-border);
+      padding: 20px 24px;
+      display: none;
+    }
+
+    .role-expand.open { display: block; }
+
+    .exp-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--maroon);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .exp-bullets {
+      padding-left: 16px;
+      margin-bottom: 0;
+    }
+
+    .exp-bullets li {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 6px;
+      font-weight: 300;
+    }
+
+    .exp-bullets li:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--cream-border);
+      background: var(--cream);
+    }
+
+    .footer-text { font-size: 12px; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--maroon); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Prisha Srivastava</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Experience</p>
+    <h1>Building Products At The Intersection Of Innovation And Impact.</h1>
+  </div>
+
+  <div class="divider"></div>
+
+  <section class="exp-section">
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('z')">
+        <div class="role-header"><span class="company">Zscaler</span><span class="date">May 2026 – Aug 2026</span></div>
+        <p class="role-title">AI Product Manager Intern</p>
+        <p class="role-loc">San Jose, California</p>
+        <div class="role-tags">
+          <span class="role-tag">MCPs</span>
+          <span class="role-tag">Agentic AI</span>
+          <span class="role-tag">Weights &amp; Biases</span>
+          <span class="role-tag">Market Research</span>
+          <span class="role-tag">GTM</span>
+          <span class="role-tag">KPI Design</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-z">▾</span> <span id="label-z">Read More</span></button>
+      </div>
+      <div class="role-expand" id="z">
+        <span class="exp-label">Coming Soon</span>
+        <p style="font-size:13px;color:var(--text-muted);font-weight:300;">Starting May 2026. Check back for updates.</p>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('nll')">
+        <div class="role-header"><span class="company">NU Launch Labs</span><span class="date">Nov 2025 – May 2026</span></div>
+        <p class="role-title">Co-Founder &amp; President</p>
+        <p class="role-loc">Boston, Massachusetts</p>
+        <div class="role-tags">
+          <span class="role-tag">Product Leadership</span>
+          <span class="role-tag">Roadmapping</span>
+          <span class="role-tag">Agile</span>
+          <span class="role-tag">300+ Members</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-nll">▾</span> <span id="label-nll">Read More</span></button>
+      </div>
+      <div class="role-expand" id="nll">
+        <span class="exp-label">What I Built</span>
+        <ul class="exp-bullets">
+          <li>Co-founded an interdisciplinary student organization of 300+ members built to bridge the gap between academia and industry, giving students real teams, real products, and skills that translate directly to corporate environments</li>
+          <li>Led market research to identify skill gaps and high-impact project opportunities, scoping team engagements accordingly</li>
+          <li>Managed roadmap and execution of an internal platform, defining system architecture, data models, and cross-team workflows</li>
+          <li>Produced PRD-style problem definitions by analyzing startup requirements, market context, and user workflows</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('ta')">
+        <div class="role-header"><span class="company">Northeastern University</span><span class="date">Jan 2026 – Present</span></div>
+        <p class="role-title">Teaching Assistant, Foundations of AI</p>
+        <p class="role-loc">Boston, Massachusetts</p>
+        <div class="role-tags">
+          <span class="role-tag">AI Education</span>
+          <span class="role-tag">Python</span>
+          <span class="role-tag">Technical Communication</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-ta">▾</span> <span id="label-ta">Read More</span></button>
+      </div>
+      <div class="role-expand" id="ta">
+        <span class="exp-label">What I Do</span>
+        <ul class="exp-bullets">
+          <li>Guide 150+ students implementing core AI algorithms in Python, conducting code reviews and debugging training pipelines</li>
+          <li>Translate complex AI concepts into accessible explanations for students at varying technical levels</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('blink')">
+        <div class="role-header"><span class="company">Blink Voice</span><span class="date">Jan 2025 – Jun 2025</span></div>
+        <p class="role-title">Software Development Intern</p>
+        <p class="role-loc">Hempstead, New York</p>
+        <div class="role-tags">
+          <span class="role-tag">NLP</span>
+          <span class="role-tag">AI Agents</span>
+          <span class="role-tag">JIRA</span>
+          <span class="role-tag">Product Documentation</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-blink">▾</span> <span id="label-blink">Read More</span></button>
+      </div>
+      <div class="role-expand" id="blink">
+        <span class="exp-label">What I Did</span>
+        <ul class="exp-bullets">
+          <li>Built NLP pipelines that extracted sentiment insights from real client calls and text, enabling users to surface actionable intelligence from voice data</li>
+          <li>Maintained structured knowledge bases documenting AI agents, use cases, and workflows to support cross-functional alignment</li>
+          <li>Managed JIRA board for backlog prioritization, sprint planning, and execution tracking</li>
+          <li>Iterated on product features using user interaction data, improving performance and reducing failure cases by 20%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('innominds')">
+        <div class="role-header"><span class="company">Innominds</span><span class="date">Jun 2024 – Aug 2024</span></div>
+        <p class="role-title">Data Science Intern</p>
+        <p class="role-loc">San Jose, California</p>
+        <div class="role-tags">
+          <span class="role-tag">Python</span>
+          <span class="role-tag">SQL</span>
+          <span class="role-tag">Docker</span>
+          <span class="role-tag">React</span>
+          <span class="role-tag">REST APIs</span>
+          <span class="role-tag">Gemini API</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-innominds">▾</span> <span id="label-innominds">Read More</span></button>
+      </div>
+      <div class="role-expand" id="innominds">
+        <span class="exp-label">What I Did</span>
+        <ul class="exp-bullets">
+          <li>Built a product that allowed users to dynamically visualize and query data, surfacing insights faster through interactive dashboards</li>
+          <li>Wrote a Business Requirements Document defining system scope, user needs, and technical constraints</li>
+          <li>Led a 5-member team through agile sprints, delegating deliverables and maintaining sprint velocity</li>
+          <li>Influenced product patent strategy and client adoption by presenting findings to C-suite and external stakeholders</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('extern')">
+        <div class="role-header"><span class="company">Extern</span><span class="date">Aug 2024 – Sep 2024</span></div>
+        <p class="role-title">AI Risk Landscape Market Research Extern</p>
+        <p class="role-loc">Remote</p>
+        <div class="role-tags">
+          <span class="role-tag">AI Governance</span>
+          <span class="role-tag">Market Research</span>
+          <span class="role-tag">Risk Frameworks</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-extern">▾</span> <span id="label-extern">Read More</span></button>
+      </div>
+      <div class="role-expand" id="extern">
+        <span class="exp-label">What I Did</span>
+        <ul class="exp-bullets">
+          <li>Developed a structured AI governance and risk framework aligning emerging regulations with enterprise product design</li>
+          <li>Presented AI transparency case studies to leadership, influencing adoption of responsible AI practices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-top" onclick="toggle('hofstra')">
+        <div class="role-header"><span class="company">Hofstra University</span><span class="date">Sep 2024 – Dec 2024</span></div>
+        <p class="role-title">AI Researcher</p>
+        <p class="role-loc">Hempstead, New York</p>
+        <div class="role-tags">
+          <span class="role-tag">LLM Bias</span>
+          <span class="role-tag">Text Mining</span>
+          <span class="role-tag">Predictive Analytics</span>
+        </div>
+        <button class="toggle-btn"><span id="icon-hofstra">▾</span> <span id="label-hofstra">Read More</span></button>
+      </div>
+      <div class="role-expand" id="hofstra">
+        <span class="exp-label">What I Did</span>
+        <ul class="exp-bullets">
+          <li>Improved model inclusivity by 15% using LLM bias-mitigation pipelines combining text mining and predictive analytics</li>
+          <li>Built dashboards visualizing bias trends, enabling faster identification of systemic risk in AI-generated outputs</li>
+        </ul>
+      </div>
+    </div>
+
+
+
+  <footer>
+    <span class="footer-text">Prisha Srivastava &copy; 2026</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prisriva/" target="_blank">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggle(id) {
+      var el = document.getElementById(id);
+      var icon = document.getElementById('icon-' + id);
+      var label = document.getElementById('label-' + id);
+      var isOpen = el.classList.contains('open');
+      el.classList.toggle('open', !isOpen);
+      icon.textContent = isOpen ? '▾' : '▴';
+      label.textContent = isOpen ? 'Read More' : 'Show Less';
+    }
+  </script>
+
+</body>
+</html>

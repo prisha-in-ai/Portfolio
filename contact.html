@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Prisha Srivastava</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Google Consent Mode + Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{'analytics_storage':'denied'});
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVZ2X0TF4G"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-ZVZ2X0TF4G');
+  </script>
   <style>
     :root {
       --cream: #FAF6F0;
@@ -305,6 +316,40 @@
       <a href="contact.html">Contact</a>
     </div>
   </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1a1a1a; color:#fff; padding:16px 24px; z-index:9999; font-size:13px; line-height:1.6;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+      <span>We use analytics to understand your experience. By continuing, you consent to analytics cookies.</span>
+      <div style="display:flex; gap:12px; flex-shrink:0;">
+        <button id="consent-reject" style="background:transparent; color:#fff; border:1px solid #fff; padding:6px 16px; border-radius:3px; cursor:pointer; font-size:12px; font-family:'DM Sans',sans-serif;">Reject</button>
+        <button id="consent-accept" style="background:#6b1a1a; color:#fff; border:none; padding:6px 16px; border-radius:3px; cursor:pointer; font-size:12px; font-family:'DM Sans',sans-serif;">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var banner = document.getElementById('consent-banner');
+      var consentKey = 'prisha_consent_given';
+      var consentGiven = localStorage.getItem(consentKey);
+      
+      if (!consentGiven) {
+        banner.style.display = 'block';
+      }
+      
+      document.getElementById('consent-accept').addEventListener('click', function(){
+        localStorage.setItem(consentKey, 'true');
+        gtag('consent','update',{'analytics_storage':'granted'});
+        banner.style.display = 'none';
+      });
+      
+      document.getElementById('consent-reject').addEventListener('click', function(){
+        localStorage.setItem(consentKey, 'false');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
 
 </body>
 </html>

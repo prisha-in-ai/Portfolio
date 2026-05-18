@@ -39,7 +39,7 @@
 
     .nav-name {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 500;
       color: var(--maroon);
       text-decoration: none;
@@ -472,6 +472,32 @@
       icon.textContent = isOpen ? '▾' : '▴';
       label.textContent = isOpen ? 'Read More' : 'Show Less';
     }
+    // Improve toggle reliability: remove inline onclicks and attach robust listeners
+    document.addEventListener('DOMContentLoaded', function () {
+      // remove inline onclick attributes that call toggle(...) to avoid double toggles
+      document.querySelectorAll('[onclick]').forEach(function(el){
+        var v = el.getAttribute('onclick') || '';
+        if (/^toggle\(/.test(v)) el.onclick = null;
+      });
+
+      document.querySelectorAll('.proj-card').forEach(function(card){
+        var top = card.querySelector('.proj-card-top');
+        var btn = card.querySelector('.toggle-btn');
+        var expand = card.querySelector('.proj-expand');
+        if (!top || !btn || !expand || !expand.id) return;
+        var id = expand.id;
+
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          toggle(id);
+        });
+
+        top.addEventListener('click', function(e){
+          if (e.target.closest('.toggle-btn')) return; // already handled
+          toggle(id);
+        });
+      });
+    });
   </script>
 
 </body>

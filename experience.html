@@ -208,6 +208,31 @@
     .footer-text { font-size: 12px; color: var(--text-muted); }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 12px; color: var(--maroon); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; flex-wrap: wrap; gap: 12px; }
+      .nav-links { gap: 18px; flex-wrap: wrap; }
+      .divider { margin: 0 24px; }
+      .page-header { padding: 56px 24px 36px; }
+      .page-header h1 { font-size: 32px; }
+      .exp-section { padding: 40px 24px; }
+      footer { padding: 18px 24px; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
+      .page-header { padding: 36px 20px 28px; }
+      .page-header h1 { font-size: 26px; }
+      .exp-section { padding: 32px 20px; }
+      .role-top { padding: 18px 20px 14px; }
+      .role-expand { padding: 16px 20px; }
+      .role-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .date { margin-left: 0; }
+      .divider { margin: 0 20px; }
+      footer { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 20px; }
+    }
   </style>
 </head>
 <body>
